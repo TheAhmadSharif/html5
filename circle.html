@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5 Canvas</title>
+
+	<link rel="shortcut icon" href="assets/3.png">
+	<link rel="stylesheet" href="assets/style.css">
+
+	<script src="live.js"></script>
+</head>
+<body>
+	<div class="container">
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="column.html">CSS3 Column</a></li>
+				<li><a href="flexbox.html">FlexBox</a></li>
+				<li><a href="wall.html"> Wall </a></li>
+				<li><a href="random.html">Random Number</a></li>
+				<li><a href="circle.html">Circle</a></li>
+				<li><a href="shake.html">Shake</a></li>
+				<li><a href="asteriod.html">Asteriod</a></li>
+			</ul>
+		</nav>
+		<h2>Circle</h2>
+		<hr>
+			
+			<canvas id="circle" width="600" height="400"></canvas>
+
+			<div class="btn-block">
+				<button id="startBtn">Start</button>
+				<button id="pauseBtn">Pause</button>
+			</div>	 <!-- End -->
+
+	</div> <!-- End Container -->
+
+	<script>
+	var playAnimation = true;
+	var startBtn = document.getElementById('startBtn');
+	var stopBtn = document.getElementById('pauseBtn');
+
+stopBtn.style.display = 'none';
+startBtn.addEventListener("click", function () {
+	startBtn.style.display = 'none';
+	stopBtn.style.display = 'block';
+
+	playAnimation = true;
+	animate();
+});
+
+stopBtn.addEventListener("click", function () {
+	stopBtn.style.display = 'none';
+	startBtn.style.display = 'block';
+	playAnimation = false;
+})
+
+		var canvas = document.getElementById('circle');
+		var context = canvas.getContext('2d');
+		context.fillStyle = 'blueviolet';
+
+		var Rect = function (x,y, width, height) {
+			this.x = x;
+			this.y = y;
+			this.width = width;
+			this.height = height;
+
+			this.radius = 100;
+			this.angle = 0;
+
+			this.reverseX = false;
+			this.reverseY = false;
+		} 
+		var rectShpes = new Array();
+
+		for ( var i = 0; i < 1; i++) {
+			/*var x = 10 + Math.floor(Math.random() * 400);
+			var y = 20 + Math.floor(Math.random() * 150);*/
+
+			var x = y = 180;
+			var width = height = 10;
+			rectShpes.push(new Rect(x,y,width,height));
+		}
+		console.log(rectShpes);
+		function animate () {
+			context.clearRect(0,0,canvas.width,canvas.height);
+			context.fillRect(180,180,8,8);
+			for (var i = 0; i < rectShpes.length; i++) {
+				var object = rectShpes[i];
+				console.log(object.x);
+
+				var x = object.x + (object.radius*Math.sin(object.angle*(Math.PI/180)));
+				var y = object.y + (object.radius*Math.cos(object.angle*(Math.PI/180)));
+
+					object.angle += 5;
+
+					if (object.angle > 360) {
+					object.angle = 0;
+					};
+
+				var w = object.width;
+				context.fillRect(x, y, w, w);
+
+			}
+			if (playAnimation) {
+				setTimeout (animate, 40);
+			}
+			
+		}
+
+	</script>
+</body>
+</html>

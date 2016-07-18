@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5 Canvas</title>
+
+	<link rel="shortcut icon" href="assets/3.png">
+	<link rel="stylesheet" href="assets/style.css">
+
+	<script src="live.js"></script>
+</head>
+<body>
+	<div class="container">
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="column.html">CSS3 Column</a></li>
+				<li><a href="flexbox.html">FlexBox</a></li>
+				<li><a href="wall.html"> Wall </a></li>
+				<li><a href="random.html">Random Number</a></li>
+				<li><a href="circle.html">Circle</a></li>
+				<li><a href="shake.html">Shake</a></li>
+				<li><a href="asteriod.html">Asteriod</a></li>
+			</ul>
+		</nav>
+		<h2>Canvas</h2>
+		<hr>
+		<canvas id="wall" width="600" height="300">
+		</canvas> <!-- End Canvas -->
+	
+		
+		<div class="btn-block">
+			<button id="startBtn">Start</button>
+			<button id="pauseBtn">Pause</button>
+		</div>	 <!-- End -->
+	</div> <!-- End Container -->
+
+	<script>
+
+	var playAnimation = true;
+	var startBtn = document.getElementById('startBtn');
+	var stopBtn = document.getElementById('pauseBtn');
+
+	stopBtn.style.display = 'none';
+	startBtn.addEventListener("click", function () {
+	startBtn.style.display = 'none';
+	stopBtn.style.display = 'block';
+
+	playAnimation = true;
+	move();
+});
+
+	stopBtn.addEventListener("click", function () {
+	stopBtn.style.display = 'none';
+	startBtn.style.display = 'block';
+	playAnimation = false;
+})
+
+
+
+		var wall = document.getElementById('wall');
+		var context = wall.getContext('2d');
+		context.fillStyle = 'blueviolet';
+
+		var ObjectClass = function (x, y, width, height) {
+			this.x = x;
+			this.y = y;
+			this.width = width;
+			this.height = height;
+			this.reverseX = false;
+			this.reverseY = false;
+		}
+
+		var ObjectHolder = new Array();
+
+		for(var i = 0; i < 6680; i++) {
+			var x = Math.floor(Math.random() * 300);
+			var y = Math.floor(Math.random() * 300);
+			var width = height = Math.random() * 10;
+			ObjectHolder.push(new ObjectClass(x,y,width,height));
+		}
+
+
+	
+		function move () {
+			context.clearRect(0,0, wall.width, wall.height);
+
+			for ( var i = 0; i < ObjectHolder.length; i=i+1) {
+				var object = ObjectHolder[i];
+
+				object.x = object.x + Math.random()*4;
+
+
+						if (object.x < 0) {
+							object.reverseX = false;
+						}	
+						else if (object.x + 10 > wall.width){
+							object.reverseX = true;		
+						}
+
+						if (object.reverseX) {
+							object.x = object.x - 6;
+						}
+						else {
+							object.x = object.x + 4;
+						}
+
+						context.fillRect(object.x, object.y, object.width, object.height);
+			}
+
+			if (playAnimation) {
+				setTimeout(move, 30);
+			}
+			
+		}
+
+		move();
+
+	</script>
+</body>
+</html>

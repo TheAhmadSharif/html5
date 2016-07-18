@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5</title>
+
+	<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+	<div class="container">
+
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="column.html">CSS3 Column</a></li>
+					<li><a href="flexbox.html">FlexBox</a></li>
+					<li><a href="wall.html"> Wall </a></li>
+					<li><a href="random.html">Random Number</a></li>
+					<li><a href="circle.html">Circle</a></li>
+					<li><a href="shake.html">Shake</a></li>
+					<li><a href="asteriod.html">Asteriod</a></li>
+			</ul>
+			</nav>
+
+
+			<div class="rectangular">
+					hello	
+			</div> <!-- End Rectangular -->
+
+			<canvas id="circle"></canvas>
+
+			<div class="rectA">
+				<div class="content-block"> 
+					Ahamd Sharif 
+				</div> <!--  -->
+			</div> <!-- End -->
+				
+	</div> <!-- End Container -->
+	
+	<script src="live.js"></script>
+
+
+<script>
+
+		var canvas = document.getElementById('circle');
+		var context = canvas.getContext("2d");
+		context.fillStyle = 'green';
+		context.fillRect(600,20,6,6);
+		context.stroke();
+		window.ononline = function () {
+			console.log('On online')
+		};
+
+		window.onoffline = function () {
+			console.log('Off online')
+		};
+
+		window.addEventListener("online", ononline);
+		window.addEventListener("offline", onoffline);
+
+
+
+</script>
+	
+</body>
+</html>

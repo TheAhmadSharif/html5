@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5 Canvas</title>
+
+	<link rel="shortcut icon" href="assets/3.png">
+	<link rel="stylesheet" href="assets/style.css">
+
+	<script src="live.js"></script>
+</head>
+<body>
+	<div class="container">
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="column.html">CSS3 Column</a></li>
+				<li><a href="flexbox.html">FlexBox</a></li>
+				<li><a href="wall.html"> Wall </a></li>
+				<li><a href="random.html">Random Number</a></li>
+				<li><a href="circle.html">Circle</a></li>
+				<li><a href="shake.html">Shake</a></li>
+				<li><a href="asteriod.html">Asteriod</a></li>
+			</ul>
+		</nav>
+		<h2>Random Number</h2>
+		<hr>
+		<div class="number-div">
+			<span id="number">0</span>
+			<span id="Rnumber">0</span>
+		</div> <!-- End number Div -->
+			
+
+			<button onclick="randomNumber()">Random Number</button>
+		</div>	 <!-- End -->
+	</div> <!-- End Container -->
+
+	<script>
+		function randomNumber () {
+			var randomNumber = 10 * Math.random() + 1;
+			var number = Math.floor(randomNumber);
+			document.getElementById('Rnumber').innerHTML = randomNumber;
+			document.getElementById('number').innerHTML = number;
+
+			console.log(randomNumber);
+
+			return Math.random();
+		}
+	</script>
+</body>
+</html>
