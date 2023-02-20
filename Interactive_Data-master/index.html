@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Thailand</title>
+
+<style type="text/css">
+  
+
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    font-family: Open Sans,Arial,sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    min-width: 320px;
+    margin: 0;
+    background-color: #edf0f2;
+    color: #343434;
+    line-height: 1.5
+}
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: auto;
+  }
+table {
+    width: 100%;
+    margin: 1em 0 .5em;
+    background: #fff
+}
+
+td,th {
+    padding: 10px 20px;
+    border-top: 1px solid #e3e3e3;
+    border-left: 1px solid #e3e3e3;
+    text-align: left
+}
+
+
+input:not([type=checkbox]):not([type=radio]), select {
+    box-sizing: border-box;
+    border-radius: 0;
+    outline-color: #4aa180;
+    background-color: #fff;
+    background-clip: padding-box;
+    color: #8a8a8a;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.wtg-place-data .climate-data .climate-data-temperature .climate-data-bar {
+    background-color: orange;
+}
+.wtg-place-data .climate-data .climate-data-barchart .climate-data-bar {
+    transition: .4s;
+    font-size: 11px;
+    line-height: 2em;
+}
+
+.wtg-months td.active, .wtg-months th.active {
+    background-color: #36724d;
+    color: #fff;
+}
+
+
+.wtg-months td .suitability-4:after, .wtg-months td .suitability-5:after, .wtg-months td .suitability-5:before {
+    content: "\2713";
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 15px;
+    text-align: center;
+}
+
+.wtg-months td {
+    position: relative;
+    box-sizing: border-box;
+    width: 8%;
+    height: 45px;
+    padding: 5px;
+}
+
+
+.wtg-months td [class^=suitability] {
+    display: block;
+    height: 100%;
+    margin: auto;
+}
+
+.wtg-place-data .climate-data .climate-data-barchart .climate-data-positive {
+    position: relative;
+    width: 100%;
+    float: left;
+}
+
+.wtg-place-data .climate-data .climate-data-barchart .climate-data-negative {
+    position: relative;
+    width: 0;
+    float: left;
+    overflow: hidden;
+}
+
+.wtg-months {
+    width: 100%;
+    margin: 0;
+    border: 1px solid #e1e3e4;
+    background-color: #fff;
+}
+
+
+.wtg-months thead th {
+    font-size: 11px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+table>tr:first-child td, table>tr:first-child th, thead tr td, thead tr th {
+    border-top-width: 0;
+}
+
+input#slider1 {
+    display: block;
+    width: 98%;
+    margin: 35px auto 25px;
+    overflow: visible;
+    background: #36724e;
+    color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+
+
+th.active div {
+    background: #13724e;
+}
+
+.wtg-place-data .climate-data .climate-data-rainfall .climate-data-bar {
+    background-color: #1e90ff;
+}
+
+.climate-data-number {
+  font-weight: bold;
+}
+</style>
+
+</head>
+<body>
+	<div class="container">
+    
+
+              <input type="range" id="slider1" value="1" min="1" max="12" oninput="showVal(this.value)" onchange="showVal(this.value)">
+
+
+        <table class="wtg-months wtg-months-interactive">
+            <thead>
+                <tr>
+                    <th onClick="showVal(1)" data-month="1" class="no-pad-x active">J<span>an</span></th>
+                    <th onClick="showVal(2)" data-month="2" class="no-pad-x">F<span>eb</span></th>
+                    <th onClick="showVal(3)" data-month="3" class="no-pad-x">M<span>ar</span></th>
+                    <th onClick="showVal(4)" data-month="4" class="no-pad-x">A<span>pr</span></th>
+                    <th onClick="showVal(5)" data-month="5" class="no-pad-x">M<span>ay</span></th>
+                    <th onClick="showVal(6)" data-month="6" class="no-pad-x">J<span>un</span></th>
+                    <th onClick="showVal(7)" data-month="7" class="no-pad-x">J<span>ul</span></th>
+                    <th onClick="showVal(8)" data-month="8" class="no-pad-x">A<span>ug</span></th>
+                    <th onClick="showVal(9)" data-month="9" class="no-pad-x">S<span>ep</span></th>
+                    <th onClick="showVal(10)" data-month="10" class="no-pad-x">O<span>ct</span></th>
+                    <th onClick="showVal(11)" data-month="11" class="no-pad-x">N<span>ov</span></th>
+                    <th onClick="showVal(12)" data-month="12" class="no-pad-x">D<span>ec</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                        <td onClick="showVal(1)" data-month="1" class="active"><div class="suitability-5"></div></td>
+                        <td onClick="showVal(2)" data-month="2" class=""><div class="suitability-5"></div></td>
+                        <td onClick="showVal(3)" data-month="3" class=""><div class="suitability-5"></div></td>
+                        <td onClick="showVal(4)" data-month="4" class=""><div class="suitability-4"></div></td>
+                        <td onClick="showVal(5)" data-month="5" class=""><div class="suitability-4"></div></td>
+                        <td onClick="showVal(6)" data-month="6" class=""><div class="suitability-4"></div></td>
+                        <td onClick="showVal(7)" data-month="7" class=""><div class="suitability-4"></div></td>
+                        <td onClick="showVal(8)" data-month="8" class=""><div class="suitability-4"></div></td>
+                        <td onClick="showVal(9)" data-month="9" class=""><div class="suitability-4"></div></td>
+                        <td onClick="showVal(10)" data-month="10" class=""><div class="suitability-4"></div></td>
+                        <td onClick="showVal(11)" data-month="11" class=""><div class="suitability-5"></div></td>
+                        <td onClick="showVal(12)" data-month="12" class=""><div class="suitability-5"></div></td>
+                </tr>
+            </tbody>
+        </table>
+
+              <table class="wtg-place-data" data-max-temp="35" data-max-rain="782" data-min-temp="23.4" data-min-rain="5.4">
+                <thead>
+                  <tr>
+                    <th>Place</th>
+                    <th colspan="2" class="climate-data-header">Daily Max Temperature</th>
+                    <th colspan="2" class="climate-data-header">Monthly Rainfall</th>
+                  </tr>
+                </thead>
+
+
+                <tbody id="weatherInfo">
+                   
+                </tbody>
+              </table>
+
+    </div>
+
+    <script type="text/javascript">
+
+var weather = {
+                "1": {
+                  "1": ["Bangkok", "90°F", "5in", "30%", "60%"],
+                  "2": ["Phuket", "88°F", "12in", "40%", "70%"],
+                  "3": ["Khao Sok National Park", "82°F", "2in", "50%", "80%"],
+                  "4": ["Khao Lak", "60°F", "4in", "66%", "90%"]
+                },
+                "2": {
+                  "1": ["Bangkok", "80°F", "2in", "40%", "70%"],
+                  "2": ["Phuket", "48°F", "8in", "50%", "80%"],
+                  "3": ["Khao Sok National Park", "82°F", "2in", "20%", "60%"],
+                  "4": ["Khao Lak", "60°F", "4in", "44%", "30%"]
+                },
+                 "3": {
+                  "1": ["Bangkok", "50°F", "4in", "20%", "30%"],
+                  "2": ["Phuket", "48°F", "8in", "50%", "80%"],
+                  "3": ["Khao Sok National Park", "82°F", "2in", "20%", "60%"],
+                  "4": ["Khao Lak", "60°F", "4in", "44%", "30%"]
+                },
+                 "4": {
+                  "1": ["Bangkok", "20°F", "22in", "52%", "75%"],
+                  "2": ["Phuket", "48°F", "0in", "90%", "25%"],
+                  "3": ["Khao Sok National Park", "85°F", "92in", "42%", "66%"],
+                  "4": ["Khao Lak", "44°F", "1in", "48%", "36%"]
+                },
+                 "5": {
+                  "1": ["Bangkok", "25°F", "2in", "40%", "70%"],
+                  "2": ["Phuket", "48°F", "8in", "50%", "80%"],
+                  "3": ["Khao Sok National Park", "82°F", "2in", "20%", "60%"],
+                  "4": ["Khao Lak", "60°F", "4in", "44%", "30%"]
+                },
+                "6": {
+                  "1": ["Bangkok", "20°F", "22in", "52%", "75%"],
+                  "2": ["Phuket", "48°F", "0in", "90%", "25%"],
+                  "3": ["Khao Sok National Park", "85°F", "92in", "42%", "66%"],
+                  "4": ["Khao Lak", "44°F", "1in", "48%", "36%"]
+                },
+                "7": {
+                  "1": ["Bangkok", "80°F", "2in", "40%", "70%"],
+                  "2": ["Phuket", "48°F", "8in", "50%", "80%"],
+                  "3": ["Khao Sok National Park", "82°F", "2in", "20%", "60%"],
+                  "4": ["Khao Lak", "60°F", "4in", "44%", "30%"]
+                },
+                "8": {
+                   "1": ["Bangkok", "20°F", "22in", "52%", "75%"],
+                  "2": ["Phuket", "48°F", "0in", "90%", "25%"],
+                  "3": ["Khao Sok National Park", "85°F", "92in", "42%", "66%"],
+                  "4": ["Khao Lak", "44°F", "1in", "48%", "36%"]
+                },
+                "9": {
+                  "1": ["Bangkok", "80°F", "2in", "40%", "70%"],
+                  "2": ["Phuket", "48°F", "8in", "50%", "80%"],
+                  "3": ["Khao Sok National Park", "82°F", "2in", "20%", "60%"],
+                  "4": ["Khao Lak", "60°F", "4in", "44%", "30%"]
+                },
+                "10": {
+                  "1": ["Bangkok", "80°F", "2in", "40%", "70%"],
+                  "2": ["Phuket", "48°F", "8in", "50%", "80%"],
+                  "3": ["Khao Sok National Park", "82°F", "2in", "20%", "60%"],
+                  "4": ["Khao Lak", "60°F", "4in", "44%", "30%"]
+                },
+                "11": {
+                  "1": ["Bangkok", "20°F", "22in", "52%", "75%"],
+                  "2": ["Phuket", "48°F", "0in", "90%", "25%"],
+                  "3": ["Khao Sok National Park", "85°F", "92in", "42%", "66%"],
+                  "4": ["Khao Lak", "44°F", "1in", "48%", "36%"]
+                },
+                "12": {
+                  "1": ["Bangkok", "80°F", "2in", "40%", "70%"],
+                  "2": ["Phuket", "48°F", "8in", "50%", "80%"],
+                  "3": ["Khao Sok National Park", "82°F", "2in", "20%", "60%"],
+                  "4": ["Khao Lak", "60°F", "4in", "44%", "30%"]
+                }
+              }
+
+                var month;
+
+                var date = new Date();
+                var month = date.getMonth() + 1;
+
+
+
+        
+       function tableCreate(){
+
+
+                      for (var i = 1; i < 5; i++) {
+          
+                          var cityName = weather[month][i][0];
+                          var temperature = weather[month][i][1];
+                          var rainfall = weather[month][i][2];
+                          var rainfall_percent = 'width:' + weather[month][i][3];
+                          var rainfall_percent_value = weather[month][i][3];
+                          var temperature_percent = 'width:' + weather[month][i][4];
+                          var temperature_percent_value = weather[month][i][4];
+
+
+
+
+                          var tr = document.createElement('tr');
+                              tr.classList.add("climate-data");
+
+
+                          var td1 = document.createElement('td');
+                              td1.classList.add("climate-data-place");
+                              td1.setAttribute('data-cityName', cityName);
+                          var td1_text = document.createTextNode(cityName);
+                                  td1.appendChild(td1_text);
+
+
+
+                          var td2 = document.createElement('td');
+                              td2.classList.add("climate-data-temperature");
+                         
+
+                          var td3 = document.createElement('td');
+                              td3.classList.add("no-pad-x");
+                              td3.classList.add("climate-data-number");
+                              td3.setAttribute('data-temperature', temperature);
+                          var td3_text = document.createTextNode(temperature);
+                                  td3.appendChild(td3_text);
+
+
+                          var td4 = document.createElement('td');
+                              td4.classList.add("climate-data-rainfall"); 
+
+
+                          var td5 = document.createElement('td');
+                              td5.classList.add("no-pad-x");
+                              td5.classList.add("climate-data-number");
+                              td5.setAttribute('data-rainfall', rainfall);
+                          var td5_text = document.createTextNode(rainfall);
+                                  td5.appendChild(td5_text);
+
+
+
+                                  tr.appendChild(td1);
+                                  tr.appendChild(td2);
+                                  tr.appendChild(td3);
+                                  tr.appendChild(td4);
+                                  tr.appendChild(td5);
+
+
+                         var td2_climateDataBarchart = document.createElement('div');
+                             td2_climateDataBarchart.classList.add('climate-data-barchart'); 
+                             td2.appendChild(td2_climateDataBarchart);
+
+
+
+                        var td2_negative = document.createElement('div');
+                            td2_negative.classList.add('climate-data-negative');
+                            td2_climateDataBarchart.appendChild(td2_negative);
+                
+
+
+
+
+                        var td2_climateDataBar = document.createElement('div');
+                            td2_climateDataBar.classList.add('climate-data-bar');
+                            td2_climateDataBar.style = temperature_percent;
+                        var td2_climateDataBar_text = document.createTextNode('\u00A0');
+                            td2_climateDataBar.appendChild(td2_climateDataBar_text);
+                            td2_negative.appendChild(td2_climateDataBar);
+
+
+                        var td2_positive = document.createElement('div');
+                            td2_positive.classList.add('climate-data-positive');
+                            td2_climateDataBarchart.appendChild(td2_positive);
+
+
+
+                        var td2_climateDataBar = document.createElement('div');
+                            td2_climateDataBar.classList.add('climate-data-bar');
+                            td2_climateDataBar.style = temperature_percent;
+                            td2_climateDataBar.setAttribute('data-temperaturePercent', temperature_percent_value);
+
+                        var td2_climateDataBar_text = document.createTextNode('\u00A0;');
+                            td2_climateDataBar.appendChild(td2_climateDataBar_text);
+                            td2_positive.appendChild(td2_climateDataBar);
+
+
+
+                         var td4_div1 = document.createElement('div');
+                             td4_div1.classList.add('climate-data-barchart'); 
+                             td4.appendChild(td4_div1);
+
+
+
+                        var td4_div1_div = document.createElement('div');
+                            td4_div1_div.classList.add('climate-data-bar');
+                            td4_div1.appendChild(td4_div1_div);
+                            td4_div1.style = rainfall_percent;
+
+                            td4_div1.setAttribute('data-rainfallPercent', cityName);
+                        var td4_div1_text = document.createTextNode('\u00A0');
+                            td4_div1_div.appendChild(td4_div1_text);
+
+
+
+                        document.getElementById("weatherInfo").appendChild(tr);
+
+                        }
+                       
+                  }
+      tableCreate();
+
+
+
+      function showVal (val) {
+
+                         var remove = document.querySelector('.active').classList.remove('active');
+                         var elems = document.querySelector(".active");
+                                       elems.classList.remove("active");
+
+
+                         month = val;
+
+                        var th = 'th[data-month="' + month + '"]';
+                        var a = document.querySelector(th);
+                                a.classList.add("active");
+
+                         var td = 'td[data-month="' + month + '"]';  
+                         var b =  document.querySelector(td);
+                                  b.classList.add("active");  
+
+                        document.getElementById("slider1").value = val;
+
+                        changeData(month);
+
+                }
+
+        function changeData(month) {
+                    for (var i = 1; i < 5; i++) {
+                      var temperature = weather[month][i][1];
+                      var rainfall = weather[month][i][2];
+                      var rainfall_percent = 'width:' + weather[month][i][3];
+                      var temperature_percent = 'width:' + weather[month][i][4];
+
+
+                      var cityTemperature = document.body.querySelectorAll('[data-temperature]')[i-1];
+                          cityTemperature.innerHTML = temperature;
+
+
+                      var cityRainfall = document.body.querySelectorAll('[data-rainfall]')[i-1];
+                          cityRainfall.innerHTML = rainfall;
+
+
+                      var rainfall_percent_div = document.body.querySelectorAll('[data-rainfallPercent]')[i-1];
+                          rainfall_percent_div.style = rainfall_percent;
+
+
+                      var temperature_percent_div = document.body.querySelectorAll('[data-temperaturePercent]')[i-1];
+                          temperature_percent_div.style = temperature_percent;
+
+
+
+
+
+                    }
+
+                }
+
+        showVal(month);
+                  
+    </script>
+	
+</body>
+</html>

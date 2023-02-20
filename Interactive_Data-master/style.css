@@ -1,0 +1,133 @@
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    font-family: Open Sans,Arial,sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    min-width: 320px;
+    margin: 0;
+    background-color: #edf0f2;
+    color: #343434;
+    line-height: 1.5
+}
+
+table {
+    width: 100%;
+    margin: 1em 0 .5em;
+    background: #fff
+}
+
+td,th {
+    padding: 10px 20px;
+    border-top: 1px solid #e3e3e3;
+    border-left: 1px solid #e3e3e3;
+    text-align: left
+}
+
+
+input:not([type=checkbox]):not([type=radio]), select {
+    box-sizing: border-box;
+    border-radius: 0;
+    outline-color: #4aa180;
+    background-color: #fff;
+    background-clip: padding-box;
+    color: #8a8a8a;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.wtg-place-data .climate-data .climate-data-temperature .climate-data-bar {
+    background-color: orange;
+}
+.wtg-place-data .climate-data .climate-data-barchart .climate-data-bar {
+    transition: .4s;
+    font-size: 11px;
+    line-height: 2em;
+}
+
+.wtg-months td.active, .wtg-months th.active {
+    background-color: #4aa180;
+    color: #fff;
+}
+
+
+.wtg-months td .suitability-4:after, .wtg-months td .suitability-5:after, .wtg-months td .suitability-5:before {
+    content: "\2713";
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 15px;
+    text-align: center;
+}
+
+.wtg-months td {
+    position: relative;
+    box-sizing: border-box;
+    width: 8%;
+    height: 45px;
+    padding: 5px;
+}
+
+
+.wtg-months td [class^=suitability] {
+    display: block;
+    height: 100%;
+    margin: auto;
+}
+
+.wtg-place-data .climate-data .climate-data-barchart .climate-data-positive {
+    position: relative;
+    width: 100%;
+    float: left;
+}
+
+.wtg-place-data .climate-data .climate-data-barchart .climate-data-negative {
+    position: relative;
+    width: 0;
+    float: left;
+    overflow: hidden;
+}
+
+.wtg-months {
+    width: 100%;
+    margin: 0;
+    border: 1px solid #e1e3e4;
+    background-color: #fff;
+}
+
+
+.wtg-months thead th {
+    font-size: 11px;
+    text-align: center;
+}
+
+
+
+table>tr:first-child td, table>tr:first-child th, thead tr td, thead tr th {
+    border-top-width: 0;
+}
+
+input#slider1 {
+    display: block;
+    width: 98%;
+    margin: 35px auto 25px;
+    overflow: visible;
+    background: #36724e;
+    color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
+
+th.active div {
+    background: #13724e;
+}
+
+.wtg-place-data .climate-data .climate-data-rainfall .climate-data-bar {
+    background-color: #1e90ff;
+}
